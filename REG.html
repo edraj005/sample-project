@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="REG.css">
+</head>
+<body>
+    <div class="loader">
+        <span class="spinner"></span>
+      </div>
+    <div class="wrapper">
+        <div class="drop drop1"></div>
+        <div class="drop drop2"></div>
+        <form id="register">
+            <h2>REGISTER</h2>
+            <div class="input">
+                <input type="text" id="username" required >
+                <label for="username">Username</label>
+            </div>
+            <div class="input">
+                <input type="email" id="email" required>
+                <label for="email">Email</label>
+            </div>
+            <div class="input">
+                <input type="password" id="password" required>
+                <label for="password">Password</label>
+            </div>
+            <div class="input">
+                <input type="text" id="mobile" required>
+                <label for="mobile">Mobile no</label>
+            </div>
+            <div class="input">
+               
+                <input list="browsers"name="browser"id="qualification"required>
+                <datalist id="browsers">
+                    <option value="EEE"></option>
+                    <option value="CSE"></option>
+                    <option value="MECH"></option>
+                    <option value="CIVIL"></option>
+                    <option value="ECE"></option>
+                </datalist>
+                <label for="qualification">Qualification</label>
+            </div>
+            <div class="input">
+                <input list="years"name="year"id="yearOfPassing"required>
+                <datalist id="years">
+                    <option value="2020"></option>
+                    <option value="2021"></option>
+                    <option value="2022"></option>
+                    <option value="2023"></option>
+                    <option value="2024"></option>
+                </datalist>
+                <label for="yearOfPassing">Year of passing</label>
+            </div>
+            <button type="submit">SUBMIT</button>
+        </form>
+    </div>
+    <ul class="bg-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    <script>
+        document.getElementById("register").addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const mobile = document.getElementById('mobile').value;
+            const qualification = document.getElementById('qualification').value;
+            const yearOfPassing = document.getElementById('yearOfPassing').value;
+
+        
+            localStorage.setItem('username', username);
+            localStorage.setItem('email', email);
+            localStorage.setItem('password', password);
+            localStorage.setItem('mobile', mobile);
+            localStorage.setItem('qualification', qualification);
+            localStorage.setItem('yearOfPassing', yearOfPassing);
+
+           
+
+            alert('Registration successful!');
+        
+            window.location.href = 'LOG.html';
+        });
+
+
+        window.addEventListener("load", function () {
+  this.setTimeout(function () {
+    var pageload = document.querySelector(".loader");
+    pageload.style.display = "none";
+  }, 1000);
+});
+
+    </script>
+</body>
+</html>

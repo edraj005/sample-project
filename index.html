@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM</title>
+    <link rel="stylesheet"href="style.css">
+</head>
+<body>
+    <div class="loader">
+        <span class="spinner"></span>
+      </div>
+     
+      <div class="container">
+        <div class="drop drop1"></div>
+        <div class="drop drop2"></div>
+        <div class="form">
+        <h1>WELCOME TO OUR SITE</h1>
+           
+            <button id="registerbtn">REGISTER</button>
+            <button id="loginbtn">LOGIN</button>
+        </div>
+        </div>
+
+        <ul class="bg-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+    <script>
+       
+        
+        document.getElementById('registerbtn').addEventListener('click', function() {
+            window.location.href = 'REG.html';
+        });
+
+        document.getElementById('loginbtn').addEventListener('click', function() {
+            window.location.href = 'LOG.html';
+        });
+
+        window.addEventListener("load", function () {
+  this.setTimeout(function () {
+    var pageload = document.querySelector(".loader");
+    pageload.style.display = "none";
+  }, 1000);
+});
+
+    
+
+
+
+        </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="home.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="loader">
+        <span class="spinner"></span>
+    </div>
+    <div class="navbar">
+        <div class="drop drop1"></div>
+        <div class="drop drop2"></div>
+        <div class="navigation">
+        <h1>Welcome to Our Site</h1>
+        <i class='bx bx-user-circle'></i>
+        <p id="usernameDisplay" class="name"></p>
+        <button id="logoutBtn">Logout</button>
+        </div>
+    </div>
+    <ul class="bg-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+
+    <script>
+        window.addEventListener("load", function () {
+            this.setTimeout(function () {
+                var pageload = document.querySelector(".loader");
+                pageload.style.display = "none";
+            }, 1000);
+
+            // Display User name //
+            const username = localStorage.getItem('username');
+            document.getElementById('usernameDisplay').innerText = `  ${username}`;
+            
+            // Logout //
+            document.getElementById('logoutBtn').addEventListener('click', function() {
+                localStorage.removeItem('username');
+                localStorage.removeItem('email');
+                localStorage.removeItem('password');
+                localStorage.removeItem('mobile');
+                localStorage.removeItem('qualification');
+                localStorage.removeItem('yearOfPassing');
+                window.location.href = 'index.html';
+            });
+        });
+    </script>
+</body>
+</html>

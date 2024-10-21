@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"href="LOG.css">
+    
+</head>
+<body>
+    <div class="loader">
+        <span class="spinner"></span>
+      </div>
+    <div class="container"> 
+      <div class="drop drop1"></div>
+      <div class="drop drop2"></div>
+         <form id="login" action="">
+            <h2>LOGIN</h2>
+            <label><p class="label">User name</label>
+            <input class="input" id="username" type="text" placeholder="Uname" required>
+
+            <label><p class="label">Email</label>
+            <input class="input" id="email1" type="email" placeholder="Email" required>
+            
+            <label><p class="label">Password</p></label>
+            <input class="input" id="password1" type="password" placeholder="********" required>
+            
+             <button class="login-button" id="login-button">LOGIN</button>
+            
+        </form> 
+      </div>
+    
+<ul class="bg-bubbles">
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+       
+    <script>
+        document.getElementById("login").addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const email1 = document.getElementById('email1').value;
+            const password1 = document.getElementById('password1').value;
+
+            const storeUsername = localStorage.getItem('username');
+            const storeEmail = localStorage.getItem('email');
+            const storePassword = localStorage.getItem('password');
+
+            if (storeUsername === username && storeEmail === email1 && storePassword === password1) {
+                alert("Login successful");
+                window.location.href = 'home.html';
+            } else  {
+                alert("Incorrect email or password");
+              
+            }
+        });
+
+        window.addEventListener("load", function () {
+  this.setTimeout(function () {
+    var pageload = document.querySelector(".loader");
+    pageload.style.display = "none";
+  }, 1000);
+});
+
+       
+    </script>
+
+   
+</body>
+</html>
